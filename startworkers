@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+rq worker LOW HIGH MED &
+rq worker MED HIGH LOW &
+rq worker HIGH MED LOW &
+rq worker HIGH MED LOW &
+rq worker HIGH MED LOW &
