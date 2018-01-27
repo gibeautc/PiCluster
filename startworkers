@@ -1,8 +1,21 @@
 #!/bin/bash
 
+if [ $1 -eq 1 ]
+then
+	./killworkers.py
+	rq worker LOW HIGH MED -q &
+	rq worker MED HIGH LOW -q &
+	rq worker HIGH MED LOW -q &
+	rq worker HIGH MED LOW -q &
+	rq worker HIGH MED LOW -q &
+elif [ $1 -eq 2 ]
+then
+	./killworkers.py
+	rq worker HIGH MED LOW -q &
+	rq worker HIGH MED LOW -q &
+	rq worker HIGH MED LOW -q &
+	rq worker HIGH MED LOW -q &
+	rq worker HIGH MED LOW -q &
 
-rq worker LOW HIGH MED &
-rq worker MED HIGH LOW &
-rq worker HIGH MED LOW &
-rq worker HIGH MED LOW &
-rq worker HIGH MED LOW &
+fi
+

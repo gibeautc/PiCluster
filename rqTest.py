@@ -34,6 +34,6 @@ def contAdding():
 		if len(q.jobs)<1000:
 			jobs.append(q.enqueue(time_to_count,100000000))
 
-allque()
-#contAdding()
+#allque()
+contAdding()
 	
